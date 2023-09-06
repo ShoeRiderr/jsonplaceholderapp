@@ -19,7 +19,6 @@ class AppFixtures extends Fixture
     {
         $user1 = new User();
         $user1->setEmail('test1@example.com');
-        $user1->setName('Test Test');
         $user1->setPassword(
             $this->userPasswordHasher->hashPassword(
                 $user1,
@@ -28,7 +27,6 @@ class AppFixtures extends Fixture
         );
         $user2 = new User();
         $user2->setEmail('test2@example.com');
-        $user2->setName('Test Test');
         $user2->setPassword(
             $this->userPasswordHasher->hashPassword(
                 $user2,
@@ -42,12 +40,10 @@ class AppFixtures extends Fixture
         $post1 = new Post();
         $post1->setTitle('test1');
         $post1->setBody('test2');
-        $post1->setUser($user1);
 
         $post2 = new Post();
         $post2->setTitle('test1');
         $post2->setBody('test2');
-        $post2->setUser($user1);
 
         $manager->persist($post1);
         $manager->persist($post2);

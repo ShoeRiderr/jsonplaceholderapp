@@ -2,10 +2,18 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\GetCollection;
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[ApiResource(
+    operations: [
+        new GetCollection()
+    ]
+)]
+#[ORM\HasLifecycleCallbacks()]
 class Post
 {
     #[ORM\Id]
@@ -19,9 +27,8 @@ class Post
     #[ORM\Column(length: 1000)]
     private ?string $body = null;
 
-    #[ORM\ManyToOne(inversedBy: 'posts')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
+    #[ORM\Column(length: 255)]
+    private ?string $authorName = null;
 
     public function getId(): ?int
     {
@@ -52,14 +59,14 @@ class Post
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getAuthorName(): ?string
     {
-        return $this->user;
+        return $this->authorName;
     }
 
-    public function setUser(?User $user): static
+    public function setAuthorName(string $authorName): static
     {
-        $this->user = $user;
+        $this->authorName = $authorName;
 
         return $this;
     }

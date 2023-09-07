@@ -2,15 +2,23 @@
 
 namespace App\Tests\Controller;
 
+use App\Tests\WebCustomTestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class PostControllerTest extends WebTestCase
+class PostControllerTest extends WebCustomTestCase
 {
     public function testShowPostListSuccessfully(): void
     {
-        $client = static::createClient();
-        $crawler = $client->request('GET', '/lista');
+        $this->client->loginUser($this->user);
+        $this->client->request('GET', '/lista');
 
         $this->assertResponseIsSuccessful();
+    }
+
+    public function testShowPostListAsGuestUser(): void
+    {
+        $this->client->request('GET', '/lista');
+
+        $this->assertResponseRedirects();
     }
 }

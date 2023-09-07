@@ -2,8 +2,6 @@
 
 namespace App\Command;
 
-use App\Entity\Post;
-use App\Repository\PostRepository;
 use App\HttpClient\JsonPlaceholderService;
 use App\Service\PostService;
 use Symfony\Component\Console\Attribute\AsCommand;
@@ -23,6 +21,11 @@ class GetPostsCommand extends Command
         private PostService $postService
     ) {
         parent::__construct();
+    }
+
+    protected function configure()
+    {
+        $this->setName('getPosts');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int

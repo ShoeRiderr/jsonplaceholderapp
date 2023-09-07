@@ -39,10 +39,12 @@ class AppFixtures extends Fixture
 
         $post1 = new Post();
         $post1->setTitle('test1');
+        $post1->setAuthorName('test1');
         $post1->setBody('test2');
 
         $post2 = new Post();
         $post2->setTitle('test1');
+        $post2->setAuthorName('test2');
         $post2->setBody('test2');
 
         $manager->persist($post1);

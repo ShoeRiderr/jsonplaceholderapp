@@ -1,0 +1,15 @@
+<div class="flex justify-between items-center mb-4 border-b">
+	<div>
+		<div class="text-2xl">
+			<b>Title:</b>
+			{{ post.title }}
+		</div>
+		<div class="text-sm text-gray-500 dark:text-gray-400">
+			<b>Author:</b>
+			{{ post.authorName }}
+		</div>
+	</div>
+	<div class="flex">
+		<a href="{{ path('app_post_delete', { post: post.id }) }}" class="mr-2">Delete</a>
+	</div>
+</div>

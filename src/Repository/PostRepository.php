@@ -33,6 +33,24 @@ class PostRepository extends ServiceEntityRepository
         $this->getEntityManager()->flush();
     }
 
+    public function add(Post $entity, bool $flush = false): void
+    {
+        $this->persist($entity);
+
+        if ($flush) {
+            $this->flush();
+        }
+    }
+
+    public function remove(Post $entity, bool $flush = false): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->flush();
+        }
+    }
+
     //    /**
     //     * @return Post[] Returns an array of Post objects
     //     */

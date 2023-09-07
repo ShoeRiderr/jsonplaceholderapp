@@ -5,7 +5,7 @@ This app is just a playground. So don't take it serious :poop:
 There ara some available features which you can execute.
 
 For example featching dummy posts from [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
-You can execute it after installing the application through command prompt by typing:
+After installing the application you can execute the command through the command prompt by typing:
 ```
 php bin/console app:get-posts
 ```

@@ -1,9 +1,12 @@
 <div class="grid grid-cols-1 gap-4">
-  {% if posts|length > 0 %}
-    {% for post in posts %}
-      {{ include('post/_post.html.twig', {post: post}) }}
-    {% endfor %}
-  {% else %}
-    There's nothing here yet!
-  {% endif %}
+	{% if posts|length > 0 %}
+		{% for post in posts %}
+			{{ include('post/_post.html.twig', {post: post}) }}
+		{% endfor %}
+		<div class="navigation flex justify-end">
+			{{ knp_pagination_render(posts) }}
+		</div>
+	{% else %}
+		There's nothing here yet!
+	{% endif %}
 </div>

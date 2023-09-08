@@ -3,7 +3,8 @@
 This app is just a playground. So don't take it serious :poop:
 
 **Till the end of the September 2023 the application is available globally under**
-[https://main-bvxea6i-rbthxbro6kofk.de-2.platformsh.site](https://main-bvxea6i-rbthxbro6kofk.de-2.platformsh.site**link.**
+[https://main-bvxea6i-rbthxbro6kofk.de-2.platformsh.site](https://main-bvxea6i-rbthxbro6kofk.de-2.platformsh.site)
+**link.**
 
 There ara some available features which you can execute.
 
